@@ -6,3 +6,6 @@ inst/doc
 .claudignore
 .DS_Store
 docs
+
+/.quarto/
+**/*.quarto_ipynb
