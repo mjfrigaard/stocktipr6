@@ -23,8 +23,8 @@ ModDownload <- R6::R6Class(
     },
 
     #' @description Initialize server logic
-    #' @param inputs_r Reactive list returned by ModInputs$server()
-    #' @param perf_r Reactive tibble returned by ModOutputs$server()
+    #' @param inputs_r Reactive list returned by mod_inputs$server()
+    #' @param perf_r Reactive tibble returned by mod_outputs$server()
     #' @return Called for side-effects; returns NULL invisibly
     server = function(inputs_r, perf_r) {
       shiny::moduleServer(private$id, function(input, output, session) {

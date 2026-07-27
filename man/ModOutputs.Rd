@@ -75,7 +75,7 @@ perf_r <- outputs$server(inputs_r)
   \subsection{Arguments}{
     \if{html}{\out{<div class="arguments">}}
     \describe{
-      \item{\code{inputs_r}}{Reactive list returned by ModInputs$server()}
+      \item{\code{inputs_r}}{Reactive list returned by mod_inputs$server()}
     }
     \if{html}{\out{</div>}}
   }
