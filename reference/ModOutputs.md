@@ -62,7 +62,7 @@ Initialize server logic
 
 - `inputs_r`:
 
-  Reactive list returned by ModInputs\$server()
+  Reactive list returned by mod_inputs\$server()
 
 #### Returns
 

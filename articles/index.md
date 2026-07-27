@@ -13,4 +13,4 @@
 - [Dark Terminal
   Theme](https://mjfrigaard.github.io/Rsixer/articles/theme.md):
 
-  Rsixer’s Bloomberg-inspired dark theme with yellow and cyan accents
+  Rsixer’s Bloomberg-inspired dark theme with amber and cyan accents

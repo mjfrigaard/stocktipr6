@@ -43,11 +43,11 @@ Initialize server logic
 
 - `inputs_r`:
 
-  Reactive list returned by ModInputs\$server()
+  Reactive list returned by mod_inputs\$server()
 
 - `perf_r`:
 
-  Reactive tibble returned by ModOutputs\$server()
+  Reactive tibble returned by mod_outputs\$server()
 
 #### Returns
 

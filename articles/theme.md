@@ -6,7 +6,7 @@
 financial data visualization. The theme features:
 
 - **Dark background** for reduced eye strain during extended use
-- **Yellow/amber primary color** (#ff9e1b) for buttons, headings, and
+- **Amber primary color** (#ff9e1b) for buttons, headings, and
   interactive elements
 - **Cyan secondary color** (#00d9ff) for hover states and interactive
   feedback
@@ -82,15 +82,13 @@ The near-black background (#0b0e13) reduces glare and eye strain, making
 it comfortable for extended viewing of financial dashboards and data
 analyses.
 
-### Yellow as Primary
+### Amber as Primary
 
-Yellow/amber (#ff9e1b) is the primary interactive color, used for:
+Amber (#ff9e1b) is the primary interactive color, used for:
 
 - Primary buttons
 
 - Headings (h1-h6)
-
-- Links
 
 - Card headers
 
@@ -125,7 +123,7 @@ paramount.
 
 ## Value Boxes
 
-The app’s KPI value boxes use yellow backgrounds (#ff9e1b) with black
+The app’s KPI value boxes use amber backgrounds (#ff9e1b) with black
 text for maximum contrast and visual prominence:
 
 ``` r
@@ -133,7 +131,7 @@ text for maximum contrast and visual prominence:
 bslib::value_box(
   title = "Ticker",
   value = "12.5%",
-  theme = "warning",  # Yellow background
+  theme = "warning",  # Amber background
   class = "vb-yellow-black"  # Ensures black text
 )
 ```
@@ -162,12 +160,12 @@ All theme configuration is in:
 
 ## Accessibility
 
-The dark theme with yellow and cyan accents meets WCAG AA contrast
+The dark theme with amber and cyan accents meets WCAG AA contrast
 ratios:
 
-- Yellow text on dark background: 12.3:1 contrast ratio
+- Amber text on dark background: 7.8:1 contrast ratio
 - Cyan text on dark background: 6.2:1 contrast ratio
-- Black text on yellow background: 15.0:1 contrast ratio
+- Black text on amber background: 15.0:1 contrast ratio
 
 This ensures the theme is readable for users with color vision
 deficiency and other accessibility needs.

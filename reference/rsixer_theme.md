@@ -19,8 +19,8 @@ A `bs_theme()` object with custom variables and CSS
 
 The theme defines a dark, Bloomberg-terminal inspired aesthetic:
 
-- **Palette:** near-black background, teal primary, green/red data
-  accents
+- **Palette:** near-black background, cyan primary, amber accents,
+  green/red data
 
 - **Typography:** IBM Plex Mono for fixed-width terminal feel
 
