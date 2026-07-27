@@ -100,7 +100,7 @@ ModOutputs <- R6::R6Class(
     },
 
     #' @description Initialize server logic
-    #' @param inputs_r Reactive list returned by ModInputs$server()
+    #' @param inputs_r Reactive list returned by mod_inputs$server()
     #' @return Reactive tibble with performance metrics
     server = function(inputs_r) {
       shiny::moduleServer(private$id, function(input, output, session) {

@@ -69,8 +69,8 @@ app_ui <- function() {
             color: #0b0e13 !important;
           }
           .btn-secondary:hover {
-            background-color: #00f0ff !important;
-            border-color: #00f0ff !important;
+            background-color: #ff9e1b !important;
+            border-color: #ff9e1b !important;
           }
           h1, h2, h3, h4, h5, h6 {
             color: #ff9e1b !important;
@@ -94,10 +94,14 @@ app_ui <- function() {
             color: #d5dde5 !important;
           }
           a {
-            color: #ff9e1b !important;
+            color: #00d9ff !important;
           }
           a:hover {
-            color: #00d9ff !important;
+            color: #ff9e1b !important;
+          }
+          .nav-link.active {
+            color: #ff9e1b !important;
+            border-color: #ff9e1b !important;
           }
           .vb-yellow-black,
           .bslib-value-box.bg-warning {

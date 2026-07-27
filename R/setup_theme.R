@@ -8,7 +8,7 @@
 #'
 #' @details
 #' The theme defines a dark, Bloomberg-terminal inspired aesthetic:
-#' - **Palette:** near-black background, teal primary, green/red data accents
+#' - **Palette:** near-black background, cyan primary, amber accents, green/red data
 #' - **Typography:** IBM Plex Mono for fixed-width terminal feel
 #' - **Surfaces:** flat panels with custom border colors
 #'
@@ -26,11 +26,11 @@ rsixer_theme <- function() {
     bg = "#0b0e13",           # Terminal background (near-black)
     fg = "#d5dde5",           # Body text
     # Semantic palette
-    primary = "#ff9e1b",      # Bloomberg amber/yellow (primary)
-    secondary = "#00d9ff",    # Teal/cyan (visual variety)
+    primary = "#ff9e1b",      # Bloomberg amber (primary interactive)
+    secondary = "#00d9ff",    # Cyan (secondary accents)
     success = "#2ecc71",      # Up / green
     info = "#4ea1ff",         # Bright cyan
-    warning = "#ffb74d",      # Lighter amber
+    warning = "#ff9e1b",      # Amber warning
     danger = "#ff4d4f",       # Down / red
     # Typography (mono everywhere)
     font_family_base = mono,
@@ -47,6 +47,6 @@ rsixer_theme <- function() {
     "card-border-color" = "#2a313b",
     # Links
     link_color = "#00d9ff",
-    link_hover_color = "#00f0ff"
+    link_hover_color = "#ff9e1b"
   )
 }

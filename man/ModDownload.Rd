@@ -55,8 +55,8 @@ download$server(inputs_r, perf_r)
   \subsection{Arguments}{
     \if{html}{\out{<div class="arguments">}}
     \describe{
-      \item{\code{inputs_r}}{Reactive list returned by ModInputs$server()}
-      \item{\code{perf_r}}{Reactive tibble returned by ModOutputs$server()}
+      \item{\code{inputs_r}}{Reactive list returned by mod_inputs$server()}
+      \item{\code{perf_r}}{Reactive tibble returned by mod_outputs$server()}
     }
     \if{html}{\out{</div>}}
   }
