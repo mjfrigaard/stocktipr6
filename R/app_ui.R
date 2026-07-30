@@ -173,7 +173,22 @@ app_ui <- function() {
 
       # ── Main content — full width ────────────────────────────────────────
       outputs$ui(),
-
+      shiny::tags$hr(),
+      # ── Reactive Values ──────────────────────────────────────────────────
+        shiny::tags$div(
+          shiny::tags$b(
+            shiny::code("reactiveValuesToList"),
+          shiny::verbatimTextOutput(outputId = "vals")
+          ),
+          shiny::tags$b(
+            shiny::code("inputs"),
+            shiny::verbatimTextOutput(outputId = "dev_inputs")
+          ),
+          shiny::tags$b(
+            shiny::code("inputs_r()"),
+            shiny::verbatimTextOutput(outputId = "dev_inputs_r")
+          )
+        ),
       # ── Footer ──────────────────────────────────────────────────────────
       shiny::tags$footer(
         class = "mt-4 pt-3 pb-2 border-top text-muted small",
