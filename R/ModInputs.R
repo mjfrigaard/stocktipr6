@@ -122,7 +122,7 @@ ModInputs <- R6::R6Class(
     #' @description Initialize server logic
     #' @return Reactive list with elements: tickers, from, to, vol_window, fetch
     server = function() {
-      shiny::moduleServer(private$id, function(input, output, session) {
+      shiny::moduleServer(id = private$id, module = function(input, output, session) {
         logger::log_debug(
           "ModInputs$server() initialised | id: {private$id}",
           namespace = "rsixer/inputs"
@@ -163,12 +163,10 @@ ModInputs <- R6::R6Class(
                 fetch = input$fetch,
                 format = input$format
               )
-
               logger::log_debug(
                 "Inputs reactive evaluated | tickers: [{paste(inp$tickers, collapse = ', ')}]",
                 namespace = "rsixer/inputs"
               )
-
               inp
             }
           )

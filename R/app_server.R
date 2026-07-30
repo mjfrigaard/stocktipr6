@@ -50,6 +50,24 @@ app_server <- function(input, output, session) {
   )
   logger::log_info("ModDownload$server() ready", namespace = "rsixer/app")
 
+  # ── 4. Reactive Values ───────────────────────────────────────────────────
+  output$vals <- shiny::renderPrint({
+    vals <- shiny::reactiveValuesToList(x = input, all.names = TRUE)
+    str(vals)
+  })
+
+  # ── 5. Dev input Values ──────────────────────────────────────────────────
+  output$dev_inputs <- shiny::renderPrint({
+    req(inputs)
+    str(inputs)
+  })
+
+  # ── 5. Dev input-r Values ─────────────────────────────────────────────────
+  output$dev_inputs_r <- shiny::renderPrint({
+    req(inputs_r)
+    str(inputs_r())
+  })
+
   # ── Session end ──────────────────────────────────────────────────────────
   session$onSessionEnded(function() {
     logger::log_info(
