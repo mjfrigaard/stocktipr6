@@ -155,10 +155,11 @@ calls</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># app_ui.R</span></span>
 <span><span class="va">inputs</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/ModInputs.html">ModInputs</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"inputs"</span><span class="op">)</span></span>
+<span><span class="va">download</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/ModDownload.html">ModDownload</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"download"</span><span class="op">)</span></span>
 <span><span class="va">outputs</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/ModOutputs.html">ModOutputs</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"outputs"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">bslib</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html" class="external-link">page_sidebar</a></span><span class="op">(</span></span>
-<span>  sidebar <span class="op">=</span> <span class="va">inputs</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  sidebar <span class="op">=</span> <span class="va">inputs</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="va">download</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  <span class="va">outputs</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -167,7 +168,10 @@ calls</p>
 <span><span class="va">inputs_r</span> <span class="op">&lt;-</span> <span class="va">inputs</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">outputs</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/ModOutputs.html">ModOutputs</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"outputs"</span><span class="op">)</span></span>
-<span><span class="va">perf_r</span> <span class="op">&lt;-</span> <span class="va">outputs</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span>inputs_r <span class="op">=</span> <span class="va">inputs_r</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">perf_r</span> <span class="op">&lt;-</span> <span class="va">outputs</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span>inputs_r <span class="op">=</span> <span class="va">inputs_r</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">download</span> <span class="op">&lt;-</span> <span class="va"><a href="../reference/ModDownload.html">ModDownload</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"download"</span><span class="op">)</span></span>
+<span><span class="va">download</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span>inputs_r <span class="op">=</span> <span class="va">inputs_r</span>, perf_r <span class="op">=</span> <span class="va">perf_r</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="namespace-handling">2. Namespace Handling<a class="anchor" aria-label="anchor" href="#namespace-handling"></a>
@@ -239,10 +243,12 @@ with 56 test cases covering:</p>
 <code>initialize(id = "inputs")</code> - Constructor with namespace
 setup</li>
 <li>
-<code>ui()</code> - Returns sidebar UI with all input controls</li>
+<code>ui(...)</code> - Returns sidebar UI with all input controls;
+<code>...</code> appends extra elements (e.g.,
+<code>ModDownload$ui()</code>)</li>
 <li>
 <code>server()</code> - Returns reactive list with tickers, dates,
-vol_window, fetch, format</li>
+vol_window, fetch</li>
 </ul>
 </li>
 <li>
@@ -298,6 +304,9 @@ shinyalert, reactable)</li>
 <ul>
 <li>
 <code>initialize(id = "download")</code> - Constructor</li>
+<li>
+<code>ui()</code> - Returns the report format selector and download
+button card</li>
 <li>
 <code>server(inputs_r, perf_r)</code> - Sets up download
 handler</li>

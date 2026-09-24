@@ -54,6 +54,7 @@ Uses R6 for object-oriented Shiny module design.</p>
 <div class="section">
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 <p></p><ul><li><p><a href="#method-ModDownload-initialize"><code>ModDownload$new()</code></a></p></li>
+<li><p><a href="#method-ModDownload-ui"><code>ModDownload$ui()</code></a></p></li>
 <li><p><a href="#method-ModDownload-server"><code>ModDownload$server()</code></a></p></li>
 <li><p><a href="#method-ModDownload-clone"><code>ModDownload$clone()</code></a></p></li>
 </ul></div><p></p><hr><a id="method-ModDownload-initialize"></a><div class="section">
@@ -72,10 +73,22 @@ Uses R6 for object-oriented Shiny module design.</p>
 
 </div>
 
+<p></p><hr><a id="method-ModDownload-ui"></a><div class="section">
+<h3 id="moddownload-ui-"><code>ModDownload$ui()</code><a class="anchor" aria-label="anchor" href="#moddownload-ui-"></a></h3>
+<p>Build report download card</p><div class="section">
+<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ModDownload</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p>A <code><a href="https://rstudio.github.io/bslib/reference/card.html" class="external-link">bslib::card()</a></code> tag object</p>
+</div>
+
+</div>
+
 <p></p><hr><a id="method-ModDownload-server"></a><div class="section">
 <h3 id="moddownload-server-"><code>ModDownload$server()</code><a class="anchor" aria-label="anchor" href="#moddownload-server-"></a></h3>
 <p>Initialize server logic</p><div class="section">
-<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ModDownload</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">inputs_r</span>, <span class="va">perf_r</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div><p></p><div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
@@ -88,7 +101,7 @@ Uses R6 for object-oriented Shiny module design.</p>
 
 </dl><p></p></div>
 </div><p></p><div class="section">
-<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
 <p>Called for side-effects; returns NULL invisibly</p>
 </div>
 
@@ -97,7 +110,7 @@ Uses R6 for object-oriented Shiny module design.</p>
 <p></p><hr><a id="method-ModDownload-clone"></a><div class="section">
 <h3 id="moddownload-clone-"><code>ModDownload$clone()</code><a class="anchor" aria-label="anchor" href="#moddownload-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ModDownload</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div><p></p><div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
@@ -116,6 +129,10 @@ Uses R6 for object-oriented Shiny module design.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="co"># In app_ui():</span></span></span>
+<span class="r-in"><span><span class="va">download</span> <span class="op">&lt;-</span> <span class="va">ModDownload</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"download"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">download</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># In app_server():</span></span></span>
 <span class="r-in"><span><span class="va">download</span> <span class="op">&lt;-</span> <span class="va">ModDownload</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"download"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">download</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">inputs_r</span>, <span class="va">perf_r</span><span class="op">)</span></span></span>
