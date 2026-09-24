@@ -102,7 +102,7 @@ A `shiny.tag` (or `shiny.tagList`) ready to embed in any UI.
 
 `type = "shinyalert"` requires a delegated `jQuery` click handler
 injected into the page. See
-[`app_ui()`](https://mjfrigaard.github.io/Rsixer/reference/app_ui.md)
+[`app_ui()`](https://mjfrigaard.github.io/stocktipr6/reference/app_ui.md)
 for an example.
 
 ## Examples

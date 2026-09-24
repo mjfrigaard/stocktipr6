@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>R6-Based Shiny Application Demo • rsixer</title>
+<title>R6-Based Shiny Application Demo • stocktipr6</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/Ubuntu-0.4.10/font.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">rsixer</a>
+    <a class="navbar-brand me-2" href="index.html">stocktipr6</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -49,7 +49,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mjfrigaard/Rsixer/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mjfrigaard/stocktipr6/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -58,23 +58,23 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="rsixer">Rsixer<a class="anchor" aria-label="anchor" href="#rsixer"></a>
+<div class="page-header"><h1 id="stocktipr6">stocktipr6<a class="anchor" aria-label="anchor" href="#stocktipr6"></a>
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of <code>Rsixer</code> is to demonstrate using <code>R6</code>s in Shiny applications.</p>
+<p>The goal of <code>stocktipr6</code> is to demonstrate using <code>R6</code>s in Shiny applications.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <code>Rsixer</code> like so:</p>
+<p>You can install the development version of <code>stocktipr6</code> like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"mjfrigaard/Rsixer"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"mjfrigaard/stocktipr6"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p><code>Rsixer</code> is a complete, production-ready Shiny application that demonstrates modern R6 design patterns for modular, maintainable Shiny applications. It is functionally equivalent to <code>tooltipexplorer</code> but uses object-oriented principles throughout.</p>
+<p><code>stocktipr6</code> is a complete, production-ready Shiny application that demonstrates modern R6 design patterns for modular, maintainable Shiny applications. It is functionally equivalent to <code>stocktipr</code> but uses object-oriented principles throughout.</p>
 </div>
 <div class="section level2">
 <h2 id="deployment--distribution">Deployment &amp; Distribution<a class="anchor" aria-label="anchor" href="#deployment--distribution"></a>
@@ -84,17 +84,17 @@
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># From GitHub</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"mjfrigaard/Rsixer"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"mjfrigaard/stocktipr6"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Or with devtools</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install-deprecated.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mjfrigaard/Rsixer"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install-deprecated.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mjfrigaard/stocktipr6"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="launching-the-app">Launching the App<a class="anchor" aria-label="anchor" href="#launching-the-app"></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mjfrigaard/Rsixer" class="external-link">rsixer</a></span><span class="op">)</span></span>
-<span><span class="fu">rsixer</span><span class="fu">::</span><span class="fu"><a href="reference/launch.html">launch</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mjfrigaard/stocktipr6" class="external-link">stocktipr6</a></span><span class="op">)</span></span>
+<span><span class="fu">stocktipr6</span><span class="fu">::</span><span class="fu"><a href="reference/launch.html">launch</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="customization">Customization<a class="anchor" aria-label="anchor" href="#customization"></a>
@@ -222,7 +222,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/mjfrigaard/Rsixer/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/mjfrigaard/stocktipr6/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
 
@@ -238,7 +238,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing rsixer</a></li>
+<li><a href="authors.html#citation">Citing stocktipr6</a></li>
 </ul>
 </div>
 

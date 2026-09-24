@@ -7,15 +7,15 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/mjfrigaard/Rsixer/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/mjfrigaard/stocktipr6/blob/main/DESCRIPTION)
 
-Frigaard M (2026). *rsixer: R6-Based Shiny Application Demo*. R package
-version 0.1.0, <https://github.com/mjfrigaard/Rsixer>.
+Frigaard M (2026). *stocktipr6: R6-Based Shiny Application Demo*. R
+package version 0.1.0, <https://github.com/mjfrigaard/stocktipr6>.
 
     @Manual{,
-      title = {rsixer: R6-Based Shiny Application Demo},
+      title = {stocktipr6: R6-Based Shiny Application Demo},
       author = {Martin Frigaard},
       year = {2026},
       note = {R package version 0.1.0},
-      url = {https://github.com/mjfrigaard/Rsixer},
+      url = {https://github.com/mjfrigaard/stocktipr6},
     }

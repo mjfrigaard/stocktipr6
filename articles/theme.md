@@ -2,7 +2,7 @@
 
 ## Overview
 
-`Rsixer` uses a dark, Bloomberg-terminal inspired theme designed for
+`stocktipr6` uses a dark, Bloomberg-terminal inspired theme designed for
 financial data visualization. The theme features:
 
 - **Dark background** for reduced eye strain during extended use
@@ -33,23 +33,23 @@ The theme is automatically applied when you launch the app:
 
 ``` r
 
-library(rsixer)
-rsixer::launch()
+library(stocktipr6)
+stocktipr6::launch()
 ```
 
 ### Customizing the Theme
 
 You can extend the theme for your own apps by importing the
-[`rsixer_theme()`](https://mjfrigaard.github.io/Rsixer/reference/rsixer_theme.md)
+[`stocktipr6_theme()`](https://mjfrigaard.github.io/stocktipr6/reference/stocktipr6_theme.md)
 function:
 
 ``` r
 
-library(rsixer)
+library(stocktipr6)
 library(shiny)
 
 ui <- bslib::page_sidebar(
-  theme = rsixer_theme(),
+  theme = stocktipr6_theme(),
   sidebar = bslib::sidebar("Sidebar content"),
   "Main content"
 )
@@ -68,7 +68,7 @@ tables:
 
 ``` r
 
-options(reactable.theme = rsixer_reactable_theme())
+options(reactable.theme = stocktipr6_reactable_theme())
 ```
 
 This applies consistent dark styling to all `reactable` tables in your
@@ -143,9 +143,9 @@ elements) remains black for optimal readability.
 
 The theme is implemented through:
 
-1.  **[`rsixer_theme()`](https://mjfrigaard.github.io/Rsixer/reference/rsixer_theme.md)** -
+1.  **[`stocktipr6_theme()`](https://mjfrigaard.github.io/stocktipr6/reference/stocktipr6_theme.md)** -
     Main `bslib` theme function defining colors, fonts, and surfaces
-2.  **[`rsixer_reactable_theme()`](https://mjfrigaard.github.io/Rsixer/reference/rsixer_reactable_theme.md)** -
+2.  **[`stocktipr6_reactable_theme()`](https://mjfrigaard.github.io/stocktipr6/reference/stocktipr6_reactable_theme.md)** -
     Custom `reactable` table styling
 3.  **CSS overrides** - Additional styles for sidebar, forms, buttons,
     and interactive elements

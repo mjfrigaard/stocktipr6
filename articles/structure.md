@@ -2,19 +2,19 @@
 
 ``` r
 
-library(rsixer)
+library(stocktipr6)
 #> 
-#> Attaching package: 'rsixer'
+#> Attaching package: 'stocktipr6'
 #> The following object is masked from 'package:base':
 #> 
 #>     %||%
 ```
 
-## Key Differences from `tooltipexplorer`
+## Key Differences from `stocktipr`
 
 ### What Changed
 
-| Aspect | Before (`tooltipexplorer`) | After (`Rsixer`) |
+| Aspect | Before (`stocktipr`) | After (`stocktipr6`) |
 |----|----|----|
 | **Module Architecture** | Function-based (`mod_inputs_ui()` + `mod_inputs_server()`) | R6 classes (`ModInputs$new()` with `$ui()` and `$server()` methods) |
 | **Namespace Management** | Traditional [`shiny::NS()`](https://rdrr.io/pkg/shiny/man/NS.html) + [`shiny::moduleServer()`](https://rdrr.io/pkg/shiny/man/moduleServer.html) | R6-integrated namespace (stored in `private$ns`) |
@@ -27,9 +27,9 @@ library(rsixer)
 ### 1. Module Composition
 
 **Before**: Separate function calls in
-[`app_ui()`](https://mjfrigaard.github.io/Rsixer/reference/app_ui.md)
+[`app_ui()`](https://mjfrigaard.github.io/stocktipr6/reference/app_ui.md)
 and
-[`app_server()`](https://mjfrigaard.github.io/Rsixer/reference/app_server.md)
+[`app_server()`](https://mjfrigaard.github.io/stocktipr6/reference/app_server.md)
 
 ``` r
 
@@ -103,7 +103,7 @@ ModInputs <- R6::R6Class("ModInputs",
 ### 3. Testing
 
 **Before**: Limited testing infrastructure (no test files in
-`tooltipexplorer`)
+`stocktipr`)
 
 **After**: Comprehensive `testthat` suite with 56 test cases covering:
 
@@ -183,7 +183,7 @@ ModInputs <- R6::R6Class("ModInputs",
 #### Helper/Utility Functions
 
 7.  **`mod_tooltip.R`** (mod_tooltip)
-    - **Lines**: 174 (unchanged from tooltipexplorer)
+    - **Lines**: 174 (unchanged from stocktipr)
     - **Type**: Pure UI helper function (no paired server)
     - **Purpose**: Unified interface for 5 tooltip backends
     - **Backends Supported**: bslib, shinyhelper, prompter, shinyalert
@@ -198,7 +198,7 @@ ModInputs <- R6::R6Class("ModInputs",
       - `with_logging(expr, context, ns)` - Wraps expressions with
         structured error/warning logging
       - `app_set_log_threshold(level)` - Sets logging threshold across
-        all rsixer namespaces
+        all stocktipr6 namespaces
     - **Purpose**: Structured logging with namespace-based filtering
 10. **`utils_operators.R`**
     - **Lines**: 14

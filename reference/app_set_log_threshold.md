@@ -3,7 +3,7 @@
 A thin wrapper around
 [`logger::log_threshold()`](https://daroczig.github.io/logger/reference/log_threshold.html)
 that applies the chosen level to every logger namespace used by
-**rsixer**.
+**stocktipr6**.
 
 ## Usage
 

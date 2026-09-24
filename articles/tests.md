@@ -2,9 +2,9 @@
 
 ``` r
 
-library(rsixer)
+library(stocktipr6)
 #> 
-#> Attaching package: 'rsixer'
+#> Attaching package: 'stocktipr6'
 #> The following object is masked from 'package:base':
 #> 
 #>     %||%
@@ -41,7 +41,7 @@ Comprehensive test coverage across 7 test files:
 ### Test Execution
 
 ``` bash
-cd /Users/mjfrigaard/projects/apps/R/Rsixer
+cd /Users/mjfrigaard/projects/apps/R/stocktipr6
 devtools::test()  # Runs all 56 tests
 ```
 

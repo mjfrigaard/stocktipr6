@@ -2,9 +2,9 @@
 
 ``` r
 
-library(rsixer)
+library(stocktipr6)
 #> 
-#> Attaching package: 'rsixer'
+#> Attaching package: 'stocktipr6'
 #> The following object is masked from 'package:base':
 #> 
 #>     %||%
@@ -40,12 +40,12 @@ All R6 modules maintain full compatibility with Shiny’s module system:
 
 ### Logging Architecture
 
-    rsixer/app                 # App-level events
-    ├── rsixer/inputs        # Input module events
-    ├── rsixer/outputs       # Output module events
-    │   ├── rsixer/tooltip   # Tooltip dispatch
-    │   └── rsixer/hoverinfo # Hover-info rendering
-    └── rsixer/download      # Download module events
+    stocktipr6/app                 # App-level events
+    ├── stocktipr6/inputs        # Input module events
+    ├── stocktipr6/outputs       # Output module events
+    │   ├── stocktipr6/tooltip   # Tooltip dispatch
+    │   └── stocktipr6/hoverinfo # Hover-info rendering
+    └── stocktipr6/download      # Download module events
 
 ------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ All R6 modules maintain full compatibility with Shiny’s module system:
 
 Key sections:
 
-- **Package**: `rsixer`
+- **Package**: `stocktipr6`
 - **Version**: `0.1.0`
 - **Type**: Package with Shiny application
 - **Imports**: R6, shiny, bslib, dplyr, tidyquant, reactable, logger,

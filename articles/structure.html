@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Structure • rsixer</title>
+<title>Structure • stocktipr6</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Ubuntu-0.4.10/font.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="../index.html">rsixer</a>
+    <a class="navbar-brand me-2" href="../index.html">stocktipr6</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -47,7 +47,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mjfrigaard/Rsixer/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mjfrigaard/stocktipr6/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -64,21 +64,21 @@
       <h1>Structure</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mjfrigaard/Rsixer/blob/main/vignettes/structure.Rmd" class="external-link"><code>vignettes/structure.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mjfrigaard/stocktipr6/blob/main/vignettes/structure.Rmd" class="external-link"><code>vignettes/structure.Rmd</code></a></small>
       <div class="d-none name"><code>structure.Rmd</code></div>
     </div>
 
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mjfrigaard/Rsixer" class="external-link">rsixer</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mjfrigaard/stocktipr6" class="external-link">stocktipr6</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'rsixer'</span></span>
+<span><span class="co">#&gt; Attaching package: 'stocktipr6'</span></span>
 <span><span class="co">#&gt; The following object is masked from 'package:base':</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     %||%</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="key-differences-from-tooltipexplorer">Key Differences from <code>tooltipexplorer</code><a class="anchor" aria-label="anchor" href="#key-differences-from-tooltipexplorer"></a>
+<h2 id="key-differences-from-stocktipr">Key Differences from <code>stocktipr</code><a class="anchor" aria-label="anchor" href="#key-differences-from-stocktipr"></a>
 </h2>
 <div class="section level3">
 <h3 id="what-changed">What Changed<a class="anchor" aria-label="anchor" href="#what-changed"></a>
@@ -91,8 +91,8 @@
 </colgroup>
 <thead><tr class="header">
 <th>Aspect</th>
-<th>Before (<code>tooltipexplorer</code>)</th>
-<th>After (<code>Rsixer</code>)</th>
+<th>Before (<code>stocktipr</code>)</th>
+<th>After (<code>stocktipr6</code>)</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -204,7 +204,7 @@ in private field</p>
 <h3 id="testing">3. Testing<a class="anchor" aria-label="anchor" href="#testing"></a>
 </h3>
 <p><strong>Before</strong>: Limited testing infrastructure (no test
-files in <code>tooltipexplorer</code>)</p>
+files in <code>stocktipr</code>)</p>
 <p><strong>After</strong>: Comprehensive <code>testthat</code> suite
 with 56 test cases covering:</p>
 <ul>
@@ -377,7 +377,7 @@ Shiny app</li>
 <strong><code>mod_tooltip.R</code></strong> (mod_tooltip)
 <ul>
 <li>
-<strong>Lines</strong>: 174 (unchanged from tooltipexplorer)</li>
+<strong>Lines</strong>: 174 (unchanged from stocktipr)</li>
 <li>
 <strong>Type</strong>: Pure UI helper function (no paired
 server)</li>
@@ -414,7 +414,7 @@ attribute for native tooltips</li>
 with structured error/warning logging</li>
 <li>
 <code>app_set_log_threshold(level)</code> - Sets logging threshold
-across all rsixer namespaces</li>
+across all stocktipr6 namespaces</li>
 </ul>
 </li>
 <li>
