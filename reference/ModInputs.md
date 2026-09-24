@@ -40,7 +40,14 @@ Build sidebar UI
 
 #### Usage
 
-    ModInputs$ui()
+    ModInputs$ui(...)
+
+#### Arguments
+
+- `...`:
+
+  Additional UI elements appended to the end of the sidebar (e.g.,
+  `ModDownload$ui()`)
 
 #### Returns
 

@@ -20,9 +20,9 @@ Comprehensive test coverage across 7 test files:
 2.  **`test_mod_outputs.R`** - 6 test cases
     - R6 instantiation, UI structure with 5 tabs, namespace IDs,
       reactive performance tibble
-3.  **`test_mod_download.R`** - 4 test cases
+3.  **`test_mod_download.R`** - 6 test cases
     - R6 instantiation, server integration with reactives, namespace
-      isolation
+      isolation, UI/server ID matching, report rendering
 4.  **`test_utils_data.R`** - 11 test cases
     - Log return computation, NA handling, performance metrics, rolling
       volatility
@@ -36,13 +36,13 @@ Comprehensive test coverage across 7 test files:
     - Span tag generation, title attributes, named vectors, style/size
       handling
 
-**Total Test Cases**: 56
+**Total Test Cases**: 58
 
 ### Test Execution
 
 ``` bash
 cd /Users/mjfrigaard/projects/apps/R/stocktipr6
-devtools::test()  # Runs all 56 tests
+devtools::test()  # Runs all 58 tests
 ```
 
 ### Coverage
@@ -51,12 +51,12 @@ devtools::test()  # Runs all 56 tests
 |--------------------|------------------------|--------------|
 | **R6 Classes**     | `test_mod_inputs.R`    | 7            |
 |                    | `test_mod_outputs.R`   | 6            |
-|                    | `test_mod_download.R`  | 4            |
+|                    | `test_mod_download.R`  | 6            |
 | **Data Utilities** | `test_utils_data.R`    | 11           |
 | **Logging**        | `test_utils_logging.R` | 7            |
 | **UI Helpers**     | `test_mod_tooltip.R`   | 10           |
 |                    | `test_mod_hoverinfo.R` | 11           |
-| **Total**          | 7 files                | **56 tests** |
+| **Total**          | 7 files                | **58 tests** |
 
 ### Test Patterns Used
 

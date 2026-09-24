@@ -9,6 +9,8 @@ Uses R6 for object-oriented Shiny module design.
 
 - [`ModDownload$new()`](#method-ModDownload-initialize)
 
+- [`ModDownload$ui()`](#method-ModDownload-ui)
+
 - [`ModDownload$server()`](#method-ModDownload-server)
 
 - [`ModDownload$clone()`](#method-ModDownload-clone)
@@ -28,6 +30,21 @@ Initialize a new ModDownload instance
 - `id`:
 
   Character. Module namespace id.
+
+------------------------------------------------------------------------
+
+### `ModDownload$ui()`
+
+Build report download card
+
+#### Usage
+
+    ModDownload$ui()
+
+#### Returns
+
+A [`bslib::card()`](https://rstudio.github.io/bslib/reference/card.html)
+tag object
 
 ------------------------------------------------------------------------
 
@@ -73,6 +90,10 @@ The objects of this class are cloneable with this method.
 
 ``` r
 if (FALSE) { # \dontrun{
+# In app_ui():
+download <- ModDownload$new(id = "download")
+download$ui()
+
 # In app_server():
 download <- ModDownload$new(id = "download")
 download$server(inputs_r, perf_r)

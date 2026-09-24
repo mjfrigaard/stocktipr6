@@ -48,10 +48,11 @@ mod_outputs_server("outputs", inputs_r = inputs_r)
 
 # app_ui.R
 inputs <- ModInputs$new(id = "inputs")
+download <- ModDownload$new(id = "download")
 outputs <- ModOutputs$new(id = "outputs")
 
 bslib::page_sidebar(
-  sidebar = inputs$ui(),
+  sidebar = inputs$ui(download$ui()),
   outputs$ui()
 )
 
@@ -61,6 +62,9 @@ inputs_r <- inputs$server()
 
 outputs <- ModOutputs$new(id = "outputs")
 perf_r <- outputs$server(inputs_r = inputs_r)
+
+download <- ModDownload$new(id = "download")
+download$server(inputs_r = inputs_r, perf_r = perf_r)
 ```
 
 ### 2. Namespace Handling
@@ -129,9 +133,10 @@ ModInputs <- R6::R6Class("ModInputs",
     - **Lines**: 112
     - **Public Methods**:
       - `initialize(id = "inputs")` - Constructor with namespace setup
-      - `ui()` - Returns sidebar UI with all input controls
+      - `ui(...)` - Returns sidebar UI with all input controls; `...`
+        appends extra elements (e.g., `ModDownload$ui()`)
       - `server()` - Returns reactive list with tickers, dates,
-        vol_window, fetch, format
+        vol_window, fetch
     - **Private Fields**: `id`, `ns`
     - **Key Features**: Integrated tooltip helpers, namespace isolation,
       fetch button observer
@@ -152,6 +157,8 @@ ModInputs <- R6::R6Class("ModInputs",
     - **Lines**: 97
     - **Public Methods**:
       - `initialize(id = "download")` - Constructor
+      - `ui()` - Returns the report format selector and download button
+        card
       - `server(inputs_r, perf_r)` - Sets up download handler
     - **Private Fields**: `id`, `ns`
     - **Key Features**:
