@@ -54,7 +54,15 @@ inputs_r <- inputs$server()
   Build sidebar UI
   \subsection{Usage}{
     \if{html}{\out{<div class="r">}}
-    \preformatted{ModInputs$ui()}
+    \preformatted{ModInputs$ui(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Additional UI elements appended to the end of the sidebar
+(e.g., \code{ModDownload$ui()})}
+    }
     \if{html}{\out{</div>}}
   }
   \subsection{Returns}{

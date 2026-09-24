@@ -9,6 +9,10 @@ Uses R6 for object-oriented Shiny module design.
 }
 \examples{
 \dontrun{
+# In app_ui():
+download <- ModDownload$new(id = "download")
+download$ui()
+
 # In app_server():
 download <- ModDownload$new(id = "download")
 download$server(inputs_r, perf_r)
@@ -19,6 +23,7 @@ download$server(inputs_r, perf_r)
 \subsection{Public methods}{
   \itemize{
     \item \href{#method-ModDownload-initialize}{\code{ModDownload$new()}}
+    \item \href{#method-ModDownload-ui}{\code{ModDownload$ui()}}
     \item \href{#method-ModDownload-server}{\code{ModDownload$server()}}
     \item \href{#method-ModDownload-clone}{\code{ModDownload$clone()}}
   }
@@ -39,6 +44,21 @@ download$server(inputs_r, perf_r)
       \item{\code{id}}{Character. Module namespace id.}
     }
     \if{html}{\out{</div>}}
+  }
+}
+
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ModDownload-ui"></a>}}
+\if{latex}{\out{\hypertarget{method-ModDownload-ui}{}}}
+\subsection{\code{ModDownload$ui()}}{
+  Build report download card
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{ModDownload$ui()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    A \code{\link[bslib:card]{bslib::card()}} tag object
   }
 }
 

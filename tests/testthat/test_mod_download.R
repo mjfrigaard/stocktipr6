@@ -53,3 +53,52 @@ test_that("ModDownload namespace isolation prevents ID conflicts", {
   expect_true(inherits(download1, "ModDownload"))
   expect_true(inherits(download2, "ModDownload"))
 })
+
+test_that("ModDownload$ui() ids match ModDownload$server() namespace", {
+  download <- ModDownload$new(id = "download")
+  ui_str <- as.character(download$ui())
+
+  expect_match(ui_str, 'id="download-format"')
+  expect_match(ui_str, 'id="download-download"')
+
+  inputs_r <- shiny::reactive(list(tickers = "AAPL"))
+  perf_r <- shiny::reactive(data.frame(symbol = "AAPL"))
+
+  shiny::testServer(function(id) download$server(inputs_r, perf_r), {
+    expect_equal(session$ns("format"), "download-format")
+    expect_equal(session$ns("download"), "download-download")
+  })
+})
+
+test_that("ModDownload$server() download handler renders an HTML report", {
+  skip_on_cran()
+  skip_if_offline()
+  skip_if_not(rmarkdown::pandoc_available(), "pandoc not available")
+
+  inputs_r <- shiny::reactive(list(
+    tickers = "AAPL",
+    from = as.Date("2023-01-01"),
+    to = as.Date("2023-03-31"),
+    vol_window = 30L
+  ))
+
+  perf_r <- shiny::reactive(
+    data.frame(
+      symbol = "AAPL",
+      ann_return = 0.25,
+      ann_vol = 0.18,
+      sharpe = 1.39
+    )
+  )
+
+  download <- ModDownload$new(id = "download")
+
+  shiny::testServer(function(id) download$server(inputs_r, perf_r), {
+    session$setInputs(format = "html")
+    report <- output$download
+
+    expect_true(file.exists(report))
+    expect_gt(file.size(report), 0)
+    expect_match(readLines(report, n = 1), "<!DOCTYPE html>", fixed = TRUE)
+  })
+})

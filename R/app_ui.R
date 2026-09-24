@@ -17,6 +17,7 @@ app_ui <- function() {
   # Instantiate R6 module UI objects
   inputs <- ModInputs$new(id = "inputs")
   outputs <- ModOutputs$new(id = "outputs")
+  download <- ModDownload$new(id = "download")
 
   with_logging(
     context = "app_ui",
@@ -169,7 +170,7 @@ app_ui <- function() {
       ),
 
       # ── Sidebar (inputs + download) ──────────────────────────────────────
-      sidebar = inputs$ui(),
+      sidebar = inputs$ui(download$ui()),
 
       # ── Main content — full width ────────────────────────────────────────
       outputs$ui(),

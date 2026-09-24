@@ -27,8 +27,10 @@ ModInputs <- R6::R6Class(
     },
 
     #' @description Build sidebar UI
+    #' @param ... Additional UI elements appended to the end of the sidebar
+    #'   (e.g., `ModDownload$ui()`)
     #' @return A [bslib::sidebar()] tag object
-    ui = function() {
+    ui = function(...) {
       bslib::sidebar(
         width = 280,
         bg = "#f8f9fa",
@@ -96,26 +98,7 @@ ModInputs <- R6::R6Class(
 
         shiny::hr(),
 
-        # ── Report download (placeholder) ─────────────────────────────────────
-        bslib::card(
-          bslib::card_header(
-            bsicons::bs_icon("file-earmark-arrow-down"), " Download Report"
-          ),
-          bslib::card_body(
-            shiny::selectInput(
-              inputId = private$ns("format"),
-              label = "Report format",
-              choices = c("HTML" = "html", "PDF" = "pdf"),
-              selected = "html"
-            ),
-            shiny::downloadButton(
-              outputId = private$ns("download"),
-              label = "Download",
-              icon = shiny::icon("download"),
-              class = "btn-outline-primary w-100"
-            )
-          )
-        )
+        ...
       )
     },
 
@@ -160,8 +143,7 @@ ModInputs <- R6::R6Class(
                 from = input$dates[1],
                 to = input$dates[2],
                 vol_window = input$vol_window,
-                fetch = input$fetch,
-                format = input$format
+                fetch = input$fetch
               )
               logger::log_debug(
                 "Inputs reactive evaluated | tickers: [{paste(inp$tickers, collapse = ', ')}]",

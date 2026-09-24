@@ -36,8 +36,7 @@ test_that("ModInputs$server() returns reactive list", {
       tickers = "AAPL",
       dates = as.Date(c("2023-01-01", "2023-12-31")),
       vol_window = 30L,
-      fetch = 0,
-      format = "html"
+      fetch = 0
     )
 
     # Verify it returns a reactive
@@ -51,7 +50,6 @@ test_that("ModInputs$server() returns reactive list", {
     expect_true("to" %in% names(inp_vals))
     expect_true("vol_window" %in% names(inp_vals))
     expect_true("fetch" %in% names(inp_vals))
-    expect_true("format" %in% names(inp_vals))
   })
 })
 
