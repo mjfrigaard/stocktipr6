@@ -5,6 +5,10 @@
 #'
 #' @examples
 #' \dontrun{
+#' # In app_ui():
+#' download <- ModDownload$new(id = "download")
+#' download$ui()
+#'
 #' # In app_server():
 #' download <- ModDownload$new(id = "download")
 #' download$server(inputs_r, perf_r)
@@ -20,6 +24,30 @@ ModDownload <- R6::R6Class(
     initialize = function(id = "download") {
       private$id <- id
       private$ns <- shiny::NS(id)
+    },
+
+    #' @description Build report download card
+    #' @return A [bslib::card()] tag object
+    ui = function() {
+      bslib::card(
+        bslib::card_header(
+          bsicons::bs_icon("file-earmark-arrow-down"), " Download Report"
+        ),
+        bslib::card_body(
+          shiny::selectInput(
+            inputId = private$ns("format"),
+            label = "Report format",
+            choices = c("HTML" = "html", "PDF" = "pdf"),
+            selected = "html"
+          ),
+          shiny::downloadButton(
+            outputId = private$ns("download"),
+            label = "Download",
+            icon = shiny::icon("download"),
+            class = "btn-outline-primary w-100"
+          )
+        )
+      )
     },
 
     #' @description Initialize server logic
