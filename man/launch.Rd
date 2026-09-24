@@ -2,7 +2,7 @@
 % Please edit documentation in R/launch.R
 \name{launch}
 \alias{launch}
-\title{Launch the Rsixer Shiny App}
+\title{Launch the stocktipr6 Shiny App}
 \usage{
 launch(...)
 }
@@ -20,10 +20,10 @@ through to \code{shinyApp()} (e.g. \code{options = list(port = 4321)}).
 }
 \examples{
 \dontrun{
-rsixer::launch()
+stocktipr6::launch()
 
 # Custom port
-rsixer::launch(options = list(port = 4242, launch.browser = TRUE))
+stocktipr6::launch(options = list(port = 4242, launch.browser = TRUE))
 }
 
 }

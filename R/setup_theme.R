@@ -1,4 +1,4 @@
-#' Setup Rsixer theme and styling
+#' Setup stocktipr6 theme and styling
 #'
 #' Creates a custom bslib theme with a dark terminal aesthetic inspired by
 #' financial trading platforms. Called internally by `app_ui()` to apply
@@ -14,11 +14,11 @@
 #'
 #' @examples
 #' \dontrun{
-#' theme <- rsixer_theme()
+#' theme <- stocktipr6_theme()
 #' }
 #'
 #' @export
-rsixer_theme <- function() {
+stocktipr6_theme <- function() {
   mono <- '"IBM Plex Mono", "JetBrains Mono", "SFMono-Regular", "Courier New", monospace'
   bslib::bs_theme(
     version = 5,

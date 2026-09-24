@@ -11,7 +11,7 @@ app_ui <- function() {
 
   logger::log_info(
     "Building app UI",
-    namespace = "rsixer/app"
+    namespace = "stocktipr6/app"
   )
 
   # Instantiate R6 module UI objects
@@ -20,13 +20,13 @@ app_ui <- function() {
 
   with_logging(
     context = "app_ui",
-    ns = "rsixer/app",
+    ns = "stocktipr6/app",
     bslib::page_sidebar(
       title = shiny::tagList(
         bsicons::bs_icon("bar-chart-steps"),
-        " Rsixer: R6 Shiny Demo"
+        " stocktipr6: R6 Shiny Demo"
       ),
-      theme = rsixer_theme(),
+      theme = stocktipr6_theme(),
       fillable = FALSE,
 
       # ── HEAD extras ─────────────────────────────────────────────────────
@@ -195,7 +195,7 @@ app_ui <- function() {
         shiny::tags$div(
           class = "d-flex flex-wrap gap-4 align-items-start",
           shiny::tags$div(
-            shiny::tags$strong("Rsixer: R6 Shiny Demo"),
+            shiny::tags$strong("stocktipr6: R6 Shiny Demo"),
             shiny::tags$span(
               " \u2014 demonstrates R6 object-oriented design patterns for modular",
               " Shiny apps using financial data from ",

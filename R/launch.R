@@ -1,4 +1,4 @@
-#' Launch the Rsixer Shiny App
+#' Launch the stocktipr6 Shiny App
 #'
 #' Convenience wrapper that calls [shiny::shinyApp()] with the package's
 #' [app_ui()] and [app_server()] functions. Pass any additional arguments
@@ -11,16 +11,16 @@
 #'
 #' @examples
 #' \dontrun{
-#' rsixer::launch()
+#' stocktipr6::launch()
 #'
 #' # Custom port
-#' rsixer::launch(options = list(port = 4242, launch.browser = TRUE))
+#' stocktipr6::launch(options = list(port = 4242, launch.browser = TRUE))
 #' }
 #'
 #' @export
 launch <- function(...) {
-  # Apply Rsixer reactable theme
-  options(reactable.theme = rsixer_reactable_theme())
+  # Apply stocktipr6 reactable theme
+  options(reactable.theme = stocktipr6_reactable_theme())
 
   shiny::shinyApp(
     ui = app_ui(),

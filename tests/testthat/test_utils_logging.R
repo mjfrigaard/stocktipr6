@@ -1,7 +1,7 @@
 test_that("with_logging executes expression successfully", {
   result <- with_logging(
     context = "test",
-    ns = "rsixer/test",
+    ns = "stocktipr6/test",
     {
       2 + 2
     }
@@ -12,7 +12,7 @@ test_that("with_logging executes expression successfully", {
 test_that("with_logging returns correct value", {
   result <- with_logging(
     context = "test",
-    ns = "rsixer/test",
+    ns = "stocktipr6/test",
     {
       c(1, 2, 3)
     }
@@ -24,7 +24,7 @@ test_that("with_logging re-throws errors", {
   expect_error(
     with_logging(
       context = "test",
-      ns = "rsixer/test",
+      ns = "stocktipr6/test",
       {
         stop("Test error")
       }
@@ -38,7 +38,7 @@ test_that("with_logging suppresses and logs warnings", {
   expect_warning(
     with_logging(
       context = "test",
-      ns = "rsixer/test",
+      ns = "stocktipr6/test",
       {
         warning("Test warning")
       }
