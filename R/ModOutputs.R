@@ -110,7 +110,7 @@ ModOutputs <- R6::R6Class(
 
         logger::log_debug(
           glue::glue("ModOutputs$server() initialised | id: {private$id}"),
-          namespace = "rsixer/outputs"
+          namespace = "stocktipr6/outputs"
         )
 
         # -- Fetch prices on button click ------------------------------------------
@@ -120,7 +120,7 @@ ModOutputs <- R6::R6Class(
 
           logger::log_info(
             glue::glue("Fetching prices | tickers: [{paste(inp$tickers, collapse = ', ')}] | from: {inp$from} | to: {inp$to}"),
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
 
           result <- tryCatch({
@@ -137,7 +137,7 @@ ModOutputs <- R6::R6Class(
             err_msg <- conditionMessage(e)
             logger::log_error(
               glue::glue("Price fetch failed | tickers: [{paste(inp$tickers, collapse = ', ')}] | error: {err_msg}"),
-              namespace = "rsixer/outputs"
+              namespace = "stocktipr6/outputs"
             )
             shiny::showNotification(
               ui = shiny::tagList(
@@ -174,7 +174,7 @@ ModOutputs <- R6::R6Class(
 
           logger::log_info(
             glue::glue("Prices fetched | rows: {nrow(result)} | tickers: [{paste(unique(result$symbol), collapse = ', ')}]"),
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
           result
         })
@@ -184,14 +184,14 @@ ModOutputs <- R6::R6Class(
           shiny::req(prices_r())
           logger::log_debug(
             "Computing daily returns",
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
           result <- tryCatch(
             get_stock_returns(prices_r()),
             error = function(e) {
               logger::log_error(
                 glue::glue("get_stock_returns() failed | error: {conditionMessage(e)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
               shiny::showNotification(
                 "Failed to compute returns from price data",
@@ -208,7 +208,7 @@ ModOutputs <- R6::R6Class(
           
           logger::log_debug(
             glue::glue("Returns computed | rows: {nrow(result)}"),
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
           result
         })
@@ -218,14 +218,14 @@ ModOutputs <- R6::R6Class(
           shiny::req(returns_r())
           logger::log_debug(
             "Computing performance summary",
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
           result <- tryCatch(
             summarise_performance(returns_r()),
             error = function(e) {
               logger::log_error(
                 glue::glue("summarise_performance() failed | error: {conditionMessage(e)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
               shiny::showNotification(
                 "Failed to compute performance metrics",
@@ -242,7 +242,7 @@ ModOutputs <- R6::R6Class(
           
           logger::log_info(
             glue::glue("Performance summary ready | symbols: [{paste(result$symbol, collapse = ', ')}]"),
-            namespace = "rsixer/outputs"
+            namespace = "stocktipr6/outputs"
           )
           result
         })
@@ -252,12 +252,12 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / value_boxes",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r()
               logger::log_debug(
                 glue::glue("Rendering value boxes | n: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               boxes <- lapply(seq_len(nrow(df)), function(i) {
@@ -287,12 +287,12 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / bslib_boxes",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r()
               logger::log_debug(
                 glue::glue("Rendering bslib popover boxes | n: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               boxes <- lapply(seq_len(nrow(df)), function(i) {
@@ -338,12 +338,12 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / shinyhelper_cards",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r()
               logger::log_debug(
                 glue::glue("Rendering shinyhelper cards | n: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               cards <- lapply(seq_len(nrow(df)), function(i) {
@@ -385,12 +385,12 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / prompter_cards",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r()
               logger::log_debug(
                 glue::glue("Rendering prompter cards | n: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               cards <- lapply(seq_len(nrow(df)), function(i) {
@@ -453,12 +453,12 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / shinyalert_cards",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r()
               logger::log_debug(
                 glue::glue("Rendering shinyalert cards | n: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               cards <- lapply(seq_len(nrow(df)), function(i) {
@@ -498,7 +498,7 @@ ModOutputs <- R6::R6Class(
           shiny::req(perf_r())
           with_logging(
             context = "ModOutputs / reactable_perf",
-            ns = "rsixer/outputs",
+            ns = "stocktipr6/outputs",
             {
               df <- perf_r() |>
                 dplyr::mutate(
@@ -509,7 +509,7 @@ ModOutputs <- R6::R6Class(
 
               logger::log_debug(
                 glue::glue("Rendering reactable | rows: {nrow(df)}"),
-                namespace = "rsixer/outputs"
+                namespace = "stocktipr6/outputs"
               )
 
               reactable::reactable(

@@ -1,30 +1,30 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Rsixer
+# stocktipr6
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of `Rsixer` is to demonstrate using `R6`s in Shiny
+The goal of `stocktipr6` is to demonstrate using `R6`s in Shiny
 applications.
 
 ## Installation
 
-You can install the development version of `Rsixer` like so:
+You can install the development version of `stocktipr6` like so:
 
 ``` r
 install.packages("pak")
-pak::pak("mjfrigaard/Rsixer")
+pak::pak("mjfrigaard/stocktipr6")
 ```
 
 ## Overview
 
-`Rsixer` is a complete, production-ready Shiny application that
+`stocktipr6` is a complete, production-ready Shiny application that
 demonstrates modern R6 design patterns for modular, maintainable Shiny
-applications. It is functionally equivalent to `tooltipexplorer` but
-uses object-oriented principles throughout.
+applications. It is functionally equivalent to `stocktipr` but uses
+object-oriented principles throughout.
 
 ## Deployment & Distribution
 
@@ -32,17 +32,17 @@ uses object-oriented principles throughout.
 
 ``` r
 # From GitHub
-pak::pak("mjfrigaard/Rsixer")
+pak::pak("mjfrigaard/stocktipr6")
 
 # Or with devtools
-devtools::install_github("mjfrigaard/Rsixer")
+devtools::install_github("mjfrigaard/stocktipr6")
 ```
 
 ### Launching the App
 
 ``` r
-library(rsixer)
-rsixer::launch()
+library(stocktipr6)
+stocktipr6::launch()
 ```
 
 ### Customization
@@ -74,7 +74,7 @@ Users can extend the package by:
 | `test_*.R`            | Tests     | 56 cases | Comprehensive test suite       |
 | `report_template.Rmd` | Template  | 153      | R Markdown report template     |
 
-**Total R Source Files**: 11\
-**Total Test Files**: 7\
-**Total Test Cases**: 56\
+**Total R Source Files**: 11  
+**Total Test Files**: 7  
+**Total Test Cases**: 56  
 **Total Lines of Code**: ~1,400+ (R + tests)

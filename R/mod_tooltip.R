@@ -101,7 +101,7 @@ mod_tooltip <- function(
 
   logger::log_debug(
     "mod_tooltip() | type: {type} | contents length: {nchar(paste(contents, collapse = ''))}",
-    namespace = "rsixer/tooltip"
+    namespace = "stocktipr6/tooltip"
   )
 
   # Build inline CSS from the wrapper size + style args
@@ -124,7 +124,7 @@ mod_tooltip <- function(
       bslib = {
         logger::log_debug(
           "mod_tooltip() dispatching to bslib::popover()",
-          namespace = "rsixer/tooltip"
+          namespace = "stocktipr6/tooltip"
         )
         bslib::popover(
           wrapped_trigger,
@@ -137,7 +137,7 @@ mod_tooltip <- function(
       shinyhelper = {
         logger::log_debug(
           "mod_tooltip() dispatching to shinyhelper::helper() | helper_type: {helper_type} | helper_size: {helper_size}",
-          namespace = "rsixer/tooltip"
+          namespace = "stocktipr6/tooltip"
         )
         shinyhelper::helper(
           wrapped_trigger,
@@ -152,7 +152,7 @@ mod_tooltip <- function(
       prompter = {
         logger::log_debug(
           "mod_tooltip() dispatching to prompter::add_prompt()",
-          namespace = "rsixer/tooltip"
+          namespace = "stocktipr6/tooltip"
         )
         prompter::add_prompt(
           wrapped_trigger,
@@ -165,7 +165,7 @@ mod_tooltip <- function(
       shinyalert = {
         logger::log_debug(
           "mod_tooltip() dispatching to shinyalert (data-* attrs) | alert_type: {alert_type}",
-          namespace = "rsixer/tooltip"
+          namespace = "stocktipr6/tooltip"
         )
         dots <- list(...)
         al_title <- dots[["title"]] %||% ""
@@ -185,7 +185,7 @@ mod_tooltip <- function(
     error = function(e) {
       logger::log_error(
         "mod_tooltip() failed | type: {type} | error: {conditionMessage(e)}",
-        namespace = "rsixer/tooltip"
+        namespace = "stocktipr6/tooltip"
       )
       stop(e)
     }

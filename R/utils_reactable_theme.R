@@ -1,11 +1,11 @@
-#' Custom reactable theme for Rsixer
+#' Custom reactable theme for stocktipr6
 #'
-#' Creates a dark theme for reactable tables matching the Rsixer terminal aesthetic.
+#' Creates a dark theme for reactable tables matching the stocktipr6 terminal aesthetic.
 #'
 #' @return A `reactable::reactableTheme()` object
 #'
 #' @export
-rsixer_reactable_theme <- function() {
+stocktipr6_reactable_theme <- function() {
   reactable::reactableTheme(
     # Colors
     backgroundColor = "#0b0e13",

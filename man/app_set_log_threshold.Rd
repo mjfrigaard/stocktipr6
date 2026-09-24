@@ -15,7 +15,7 @@ Invisibly returns \code{level}.
 }
 \description{
 A thin wrapper around \code{\link[logger:log_threshold]{logger::log_threshold()}} that applies the chosen
-level to every logger namespace used by \strong{rsixer}.
+level to every logger namespace used by \strong{stocktipr6}.
 }
 \details{
 Log levels from lowest to highest verbosity:

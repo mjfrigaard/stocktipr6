@@ -1,7 +1,7 @@
-# This file is part of the testthat suite for rsixer.
+# This file is part of the testthat suite for stocktipr6.
 # It ensures that testthat runs all tests in tests/testthat/
 
 library(testthat)
-library(rsixer)
+library(stocktipr6)
 
-test_check("rsixer")
+test_check("stocktipr6")

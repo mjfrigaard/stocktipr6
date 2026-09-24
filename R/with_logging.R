@@ -10,7 +10,7 @@
 #' @param context Short string identifying the call site, e.g.
 #'   `"mod_outputs / prices_r"`.  Prepended to every log message.
 #' @param ns      Logger namespace string.
-#'   Defaults to `"rsixer/app"`.
+#'   Defaults to `"stocktipr6/app"`.
 #'
 #' @return The value of `expr` on success; re-throws on error.
 #'
@@ -18,13 +18,13 @@
 #' \dontrun{
 #' result <- with_logging(
 #'   context = "my_module / compute",
-#'   ns = "rsixer/app",
+#'   ns = "stocktipr6/app",
 #'   sqrt(4)
 #' )
 #' }
 #'
 #' @export
-with_logging <- function(expr, context = "", ns = "rsixer/app") {
+with_logging <- function(expr, context = "", ns = "stocktipr6/app") {
   tryCatch(
     withCallingHandlers(
       expr,

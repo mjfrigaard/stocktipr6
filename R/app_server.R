@@ -14,7 +14,7 @@ app_server <- function(input, output, session) {
 
   logger::log_info(
     "Session started | session_id: {session$token}",
-    namespace = "rsixer/app"
+    namespace = "stocktipr6/app"
   )
 
   # ── shinyhelper ──────────────────────────────────────────────────────────
@@ -28,27 +28,27 @@ app_server <- function(input, output, session) {
   inputs_r <- with_logging(
     inputs$server(),
     context = "app_server / ModInputs",
-    ns = "rsixer/app"
+    ns = "stocktipr6/app"
   )
-  logger::log_info("ModInputs$server() ready", namespace = "rsixer/app")
+  logger::log_info("ModInputs$server() ready", namespace = "stocktipr6/app")
 
   # ── 2. Output module ─────────────────────────────────────────────────────
   outputs <- ModOutputs$new(id = "outputs")
   perf_r <- with_logging(
     outputs$server(inputs_r = inputs_r),
     context = "app_server / ModOutputs",
-    ns = "rsixer/app"
+    ns = "stocktipr6/app"
   )
-  logger::log_info("ModOutputs$server() ready", namespace = "rsixer/app")
+  logger::log_info("ModOutputs$server() ready", namespace = "stocktipr6/app")
 
   # ── 3. Download module ───────────────────────────────────────────────────
   download <- ModDownload$new(id = "download")
   with_logging(
     download$server(inputs_r = inputs_r, perf_r = perf_r),
     context = "app_server / ModDownload",
-    ns = "rsixer/app"
+    ns = "stocktipr6/app"
   )
-  logger::log_info("ModDownload$server() ready", namespace = "rsixer/app")
+  logger::log_info("ModDownload$server() ready", namespace = "stocktipr6/app")
 
   # ── 4. Reactive Values ───────────────────────────────────────────────────
   output$vals <- shiny::renderPrint({
@@ -72,7 +72,7 @@ app_server <- function(input, output, session) {
   session$onSessionEnded(function() {
     logger::log_info(
       "Session ended   | session_id: {session$token}",
-      namespace = "rsixer/app"
+      namespace = "stocktipr6/app"
     )
   })
 }

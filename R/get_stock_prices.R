@@ -56,7 +56,7 @@ get_stock_prices <- function(tickers, from, to = Sys.Date()) {
       error = function(e) {
         logger::log_debug(
           glue::glue("tidyquant fetch failed for {ticker}: {conditionMessage(e)}"),
-          namespace = "rsixer/data"
+          namespace = "stocktipr6/data"
         )
         NULL
       }
@@ -78,7 +78,7 @@ get_stock_prices <- function(tickers, from, to = Sys.Date()) {
       if (length(failed_tickers) > 0) {
         logger::log_warn(
           paste0("Partial fetch: failed tickers [", paste(failed_tickers, collapse = ", "), "] using fallback demo data instead"),
-          namespace = "rsixer/data"
+          namespace = "stocktipr6/data"
         )
       }
       return(combined)
@@ -88,7 +88,7 @@ get_stock_prices <- function(tickers, from, to = Sys.Date()) {
   # All tickers failed; fall back to demo data
   logger::log_warn(
     paste0("Yahoo Finance unavailable for all tickers [", paste(failed_tickers, collapse = ", "), "]. Using demo data."),
-    namespace = "rsixer/data"
+    namespace = "stocktipr6/data"
   )
 
   demo_data <- .get_demo_prices(tickers, from, to)

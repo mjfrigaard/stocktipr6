@@ -1,7 +1,7 @@
 #' Set the Application-wide Log Threshold
 #'
 #' A thin wrapper around [logger::log_threshold()] that applies the chosen
-#' level to every logger namespace used by **rsixer**.
+#' level to every logger namespace used by **stocktipr6**.
 #'
 #' Log levels from lowest to highest verbosity:
 #' `TRACE`, `DEBUG`, `INFO`, `SUCCESS`, `WARN`, `ERROR`, `FATAL`.
@@ -30,12 +30,12 @@
 app_set_log_threshold <- function(level = logger::INFO) {
   namespaces <- c(
     "global",
-    "rsixer/app",
-    "rsixer/inputs",
-    "rsixer/outputs",
-    "rsixer/download",
-    "rsixer/tooltip",
-    "rsixer/hoverinfo"
+    "stocktipr6/app",
+    "stocktipr6/inputs",
+    "stocktipr6/outputs",
+    "stocktipr6/download",
+    "stocktipr6/tooltip",
+    "stocktipr6/hoverinfo"
   )
   lapply(namespaces, \(ns) logger::log_threshold(level, namespace = ns))
   invisible(level)

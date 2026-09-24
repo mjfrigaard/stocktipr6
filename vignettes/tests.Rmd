@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(rsixer)
+library(stocktipr6)
 ```
 
 ## `tests/testthat/` Directory (Test Suite)
@@ -42,7 +42,7 @@ Comprehensive test coverage across 7 test files:
 ### Test Execution
 
 ``` bash
-cd /Users/mjfrigaard/projects/apps/R/Rsixer
+cd /Users/mjfrigaard/projects/apps/R/stocktipr6
 devtools::test()  # Runs all 56 tests
 ```
 

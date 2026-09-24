@@ -125,7 +125,7 @@ ModInputs <- R6::R6Class(
       shiny::moduleServer(id = private$id, module = function(input, output, session) {
         logger::log_debug(
           "ModInputs$server() initialised | id: {private$id}",
-          namespace = "rsixer/inputs"
+          namespace = "stocktipr6/inputs"
         )
 
         # ── Fetch button observer ───────────────────────────────────────────────
@@ -134,13 +134,13 @@ ModInputs <- R6::R6Class(
 
           logger::log_info(
             "Fetch button pressed | tickers: [{paste(input$tickers, collapse = ', ')}] | from: {input$dates[1]} | to: {input$dates[2]} | vol_window: {input$vol_window}",
-            namespace = "rsixer/inputs"
+            namespace = "stocktipr6/inputs"
           )
 
           if (length(input$tickers) == 0) {
             logger::log_warn(
               "Fetch pressed with no tickers selected",
-              namespace = "rsixer/inputs"
+              namespace = "stocktipr6/inputs"
             )
             shiny::showNotification(
               "Please select at least one ticker.",
@@ -153,7 +153,7 @@ ModInputs <- R6::R6Class(
         shiny::reactive({
           with_logging(
             context = "ModInputs / reactive list",
-            ns = "rsixer/inputs",
+            ns = "stocktipr6/inputs",
             {
               inp <- list(
                 tickers = input$tickers,
@@ -165,7 +165,7 @@ ModInputs <- R6::R6Class(
               )
               logger::log_debug(
                 "Inputs reactive evaluated | tickers: [{paste(inp$tickers, collapse = ', ')}]",
-                namespace = "rsixer/inputs"
+                namespace = "stocktipr6/inputs"
               )
               inp
             }

@@ -15,19 +15,19 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(rsixer)
+library(stocktipr6)
 ```
 
 ## Design Patterns
 
-This vignette covers the design patterns used to implement the modules from the `tooltipexplorer` application.
+This vignette covers the design patterns used to implement the modules from the `stocktipr` application.
 
 ### 1. R6 Module Pattern
 
 With traditional Shiny modules, we create separate UI and server functions. This makes reusability and composition a little awkward. In `R6` class objects, we can encapsulate the module logic with public `$ui()` and `$server()` methods.
 
 ``` r
-# tooltipexplorer approach 
+# stocktipr approach 
 inputs <- list(
   ui = mod_inputs_ui("inputs"),
   server = function() { mod_inputs_server("inputs") }
@@ -110,12 +110,12 @@ Even with `browser()` and `observe()`, debugging complex reactive applications i
 ``` r
 logger::log_info(
   "Fetch button pressed | tickers: [{paste(input$tickers, collapse = ', ')}]",
-  namespace = "rsixer/inputs"
+  namespace = "stocktipr6/inputs"
 )
 
 # Filter by namespace in development
 app_set_log_threshold(logger::DEBUG)  # All namespaces
-logger::log_threshold(logger::INFO, namespace = "rsixer/app")  # Specific namespace
+logger::log_threshold(logger::INFO, namespace = "stocktipr6/app")  # Specific namespace
 ```
 
 This simplifies the trace execution flow so we can filter by the module during debugging (or production vs. development modes).

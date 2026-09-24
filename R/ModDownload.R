@@ -31,7 +31,7 @@ ModDownload <- R6::R6Class(
 
         logger::log_debug(
           "ModDownload$server() initialised | id: {private$id}",
-          namespace = "rsixer/download"
+          namespace = "stocktipr6/download"
         )
 
         output$download <- shiny::downloadHandler(
@@ -39,14 +39,14 @@ ModDownload <- R6::R6Class(
           filename = function() {
             with_logging(
               context = "ModDownload / filename",
-              ns = "rsixer/download",
+              ns = "stocktipr6/download",
               {
                 ts <- format(Sys.time(), "%Y%m%d_%H%M%S")
                 ext <- if (input$format == "html") "html" else "pdf"
-                fname <- glue::glue("rsixer_report_{ts}.{ext}")
+                fname <- glue::glue("stocktipr6_report_{ts}.{ext}")
                 logger::log_info(
                   "Download filename generated | file: {fname}",
-                  namespace = "rsixer/download"
+                  namespace = "stocktipr6/download"
                 )
                 fname
               }
@@ -59,18 +59,18 @@ ModDownload <- R6::R6Class(
 
             logger::log_info(
               "Report render started | format: {input$format} | tickers: [{paste(inp$tickers, collapse = ', ')}]",
-              namespace = "rsixer/download"
+              namespace = "stocktipr6/download"
             )
 
             template <- system.file(
               "report_template.Rmd",
-              package = "rsixer"
+              package = "stocktipr6"
             )
 
             if (!nzchar(template)) {
               logger::log_error(
                 "report_template.Rmd not found in package inst/",
-                namespace = "rsixer/download"
+                namespace = "stocktipr6/download"
               )
               stop("Report template not found. Is the package installed correctly?")
             }
@@ -83,7 +83,7 @@ ModDownload <- R6::R6Class(
 
             logger::log_debug(
               "Rendering to temp dir | path: {tmp_dir}",
-              namespace = "rsixer/download"
+              namespace = "stocktipr6/download"
             )
 
             out_fmt <- if (input$format == "html") {
@@ -116,7 +116,7 @@ ModDownload <- R6::R6Class(
               error = function(e) {
                 logger::log_error(
                   "rmarkdown::render() failed | format: {input$format} | error: {conditionMessage(e)}",
-                  namespace = "rsixer/download"
+                  namespace = "stocktipr6/download"
                 )
                 shiny::showNotification(
                   paste("Report generation failed:", conditionMessage(e)),
@@ -129,7 +129,7 @@ ModDownload <- R6::R6Class(
 
             logger::log_info(
               "Report render complete | format: {input$format} | file: {file}",
-              namespace = "rsixer/download"
+              namespace = "stocktipr6/download"
             )
           }
         )
