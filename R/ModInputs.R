@@ -49,7 +49,7 @@ ModInputs <- R6::R6Class(
             )
           ),
           choices = default_tickers,
-          selected = c("AAPL", "MSFT", "GOOGL"),
+          selected = default_tickers[1:3],
           multiple = TRUE,
           options = list(
             plugins = list("remove_button"),
