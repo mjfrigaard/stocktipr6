@@ -81,3 +81,11 @@ test_that("ModInputs namespace isolation prevents ID conflicts", {
   expect_no_match(ui1, "inputs2")
   expect_no_match(ui2, "inputs1")
 })
+
+test_that("ModInputs$ui() preselects tickers from default_tickers", {
+  ui_str <- as.character(bslib::layout_sidebar(sidebar = ModInputs$new(id = "test")$ui()))
+
+  for (tkr in default_tickers[1:3]) {
+    expect_match(ui_str, sprintf('<option value="%s" selected>', tkr), fixed = TRUE)
+  }
+})
