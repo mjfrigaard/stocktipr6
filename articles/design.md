@@ -2,9 +2,9 @@
 
 ``` r
 
-library(rsixer)
+library(stocktipr6)
 #> 
-#> Attaching package: 'rsixer'
+#> Attaching package: 'stocktipr6'
 #> The following object is masked from 'package:base':
 #> 
 #>     %||%
@@ -13,7 +13,7 @@ library(rsixer)
 ## Design Patterns
 
 This vignette covers the design patterns used to implement the modules
-from the `tooltipexplorer` application.
+from the `stocktipr` application.
 
 ### 1. R6 Module Pattern
 
@@ -24,7 +24,7 @@ functions. This makes reusability and composition a little awkward. In
 
 ``` r
 
-# tooltipexplorer approach 
+# stocktipr approach 
 inputs <- list(
   ui = mod_inputs_ui("inputs"),
   server = function() { mod_inputs_server("inputs") }
@@ -130,12 +130,12 @@ module-specific namespaces.
 
 logger::log_info(
   "Fetch button pressed | tickers: [{paste(input$tickers, collapse = ', ')}]",
-  namespace = "rsixer/inputs"
+  namespace = "stocktipr6/inputs"
 )
 
 # Filter by namespace in development
 app_set_log_threshold(logger::DEBUG)  # All namespaces
-logger::log_threshold(logger::INFO, namespace = "rsixer/app")  # Specific namespace
+logger::log_threshold(logger::INFO, namespace = "stocktipr6/app")  # Specific namespace
 ```
 
 This simplifies the trace execution flow so we can filter by the module

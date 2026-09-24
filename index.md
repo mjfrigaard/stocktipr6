@@ -1,24 +1,24 @@
-# Rsixer
+# stocktipr6
 
-The goal of `Rsixer` is to demonstrate using `R6`s in Shiny
+The goal of `stocktipr6` is to demonstrate using `R6`s in Shiny
 applications.
 
 ## Installation
 
-You can install the development version of `Rsixer` like so:
+You can install the development version of `stocktipr6` like so:
 
 ``` r
 
 install.packages("pak")
-pak::pak("mjfrigaard/Rsixer")
+pak::pak("mjfrigaard/stocktipr6")
 ```
 
 ## Overview
 
-`Rsixer` is a complete, production-ready Shiny application that
+`stocktipr6` is a complete, production-ready Shiny application that
 demonstrates modern R6 design patterns for modular, maintainable Shiny
-applications. It is functionally equivalent to `tooltipexplorer` but
-uses object-oriented principles throughout.
+applications. It is functionally equivalent to `stocktipr` but uses
+object-oriented principles throughout.
 
 ## Deployment & Distribution
 
@@ -27,18 +27,18 @@ uses object-oriented principles throughout.
 ``` r
 
 # From GitHub
-pak::pak("mjfrigaard/Rsixer")
+pak::pak("mjfrigaard/stocktipr6")
 
 # Or with devtools
-devtools::install_github("mjfrigaard/Rsixer")
+devtools::install_github("mjfrigaard/stocktipr6")
 ```
 
 ### Launching the App
 
 ``` r
 
-library(rsixer)
-rsixer::launch()
+library(stocktipr6)
+stocktipr6::launch()
 ```
 
 ### Customization

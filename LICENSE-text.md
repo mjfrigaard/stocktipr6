@@ -1,4 +1,4 @@
 # License
 
     YEAR: 2025
-    COPYRIGHT HOLDER: Rsixer authors
+    COPYRIGHT HOLDER: stocktipr6 authors

@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2025 Rsixer authors
+Copyright (c) 2025 stocktipr6 authors
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

@@ -2,15 +2,15 @@
 
 ### All vignettes
 
-- [Design](https://mjfrigaard.github.io/Rsixer/articles/design.md):
+- [Design](https://mjfrigaard.github.io/stocktipr6/articles/design.md):
 
-- [Implementation](https://mjfrigaard.github.io/Rsixer/articles/implementation.md):
+- [Implementation](https://mjfrigaard.github.io/stocktipr6/articles/implementation.md):
 
-- [Structure](https://mjfrigaard.github.io/Rsixer/articles/structure.md):
+- [Structure](https://mjfrigaard.github.io/stocktipr6/articles/structure.md):
 
-- [Tests](https://mjfrigaard.github.io/Rsixer/articles/tests.md):
+- [Tests](https://mjfrigaard.github.io/stocktipr6/articles/tests.md):
 
 - [Dark Terminal
-  Theme](https://mjfrigaard.github.io/Rsixer/articles/theme.md):
+  Theme](https://mjfrigaard.github.io/stocktipr6/articles/theme.md):
 
-  Rsixer’s Bloomberg-inspired dark theme with amber and cyan accents
+  stocktipr6’s Bloomberg-inspired dark theme with amber and cyan accents

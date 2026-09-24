@@ -1,11 +1,11 @@
-# Launch the Rsixer Shiny App
+# Launch the stocktipr6 Shiny App
 
 Convenience wrapper that calls
 [`shiny::shinyApp()`](https://rdrr.io/pkg/shiny/man/shinyApp.html) with
 the package's
-[`app_ui()`](https://mjfrigaard.github.io/Rsixer/reference/app_ui.md)
+[`app_ui()`](https://mjfrigaard.github.io/stocktipr6/reference/app_ui.md)
 and
-[`app_server()`](https://mjfrigaard.github.io/Rsixer/reference/app_server.md)
+[`app_server()`](https://mjfrigaard.github.io/stocktipr6/reference/app_server.md)
 functions. Pass any additional arguments through to `shinyApp()` (e.g.
 `options = list(port = 4321)`).
 
@@ -31,9 +31,9 @@ in the viewer / browser.
 
 ``` r
 if (FALSE) { # \dontrun{
-rsixer::launch()
+stocktipr6::launch()
 
 # Custom port
-rsixer::launch(options = list(port = 4242, launch.browser = TRUE))
+stocktipr6::launch(options = list(port = 4242, launch.browser = TRUE))
 } # }
 ```

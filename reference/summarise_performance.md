@@ -15,7 +15,7 @@ summarise_performance(returns)
 - returns:
 
   A tibble returned by
-  [`get_stock_returns()`](https://mjfrigaard.github.io/Rsixer/reference/get_stock_returns.md).
+  [`get_stock_returns()`](https://mjfrigaard.github.io/stocktipr6/reference/get_stock_returns.md).
 
 ## Value
 
