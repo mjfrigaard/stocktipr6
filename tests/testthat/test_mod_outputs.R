@@ -8,12 +8,12 @@ test_that("ModOutputs$ui() returns valid tag structure", {
   outputs <- ModOutputs$new(id = "test")
   ui <- outputs$ui()
 
-  expect_s3_class(ui, "shiny.tagList")
+  expect_s3_class(ui, "shiny.tag.list")
   ui_str <- as.character(ui)
 
   # Check for key components
-  expect_match(ui_str, "uiOutput")
-  expect_match(ui_str, "navset_card_tab")
+  expect_match(ui_str, "shiny-html-output")
+  expect_match(ui_str, "nav-tabs")
   expect_match(ui_str, "bslib")
   expect_match(ui_str, "shinyhelper")
   expect_match(ui_str, "prompter")
@@ -34,26 +34,21 @@ test_that("ModOutputs$ui() uses correct namespace IDs", {
 
 test_that("ModOutputs$server() returns reactive performance tibble", {
   # Create mock inputs_r reactive
-  shiny::testServer(
-    app = function(input, output, session) {
-      # Mock inputs_r
-      inputs_r <- shiny::reactive(list(
-        tickers = c("AAPL"),
-        from = as.Date("2023-01-01"),
-        to = as.Date("2023-12-31"),
-        vol_window = 30L,
-        fetch = 0,
-        format = "html"
-      ))
+  inputs_r <- shiny::reactive(list(
+    tickers = c("AAPL"),
+    from = as.Date("2023-01-01"),
+    to = as.Date("2023-12-31"),
+    vol_window = 30L,
+    fetch = 0,
+    format = "html"
+  ))
 
-      outputs <- ModOutputs$new(id = "test")
-      perf_r <- outputs$server(inputs_r = inputs_r)
+  outputs <- ModOutputs$new(id = "test")
 
-      # Verify it returns a reactive
-      expect_true(shiny::is.reactive(perf_r))
-    },
-    args = list()
-  )
+  shiny::testServer(function(id) outputs$server(inputs_r = inputs_r), {
+    # Verify it returns a reactive
+    expect_true(shiny::is.reactive(session$returned))
+  })
 })
 
 test_that("ModOutputs namespace isolation prevents ID conflicts", {

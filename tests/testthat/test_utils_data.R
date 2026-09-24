@@ -28,7 +28,7 @@ test_that("get_stock_returns computes log returns correctly", {
 
   # Verify log return calculation
   expected_return <- log(105 / 100)
-  expect_approximately_equal(returns$daily_return[1], expected_return, tolerance = 1e-10)
+  expect_equal(returns$daily_return[1], expected_return, tolerance = 1e-10)
 })
 
 test_that("get_stock_returns removes NAs from lag", {
@@ -61,15 +61,15 @@ test_that("summarise_performance calculates metrics correctly", {
 
   # Verify annualised return: mean(0.01, 0.02, -0.01) * 252
   expected_return <- mean(c(0.01, 0.02, -0.01)) * 252
-  expect_approximately_equal(perf$ann_return, expected_return, tolerance = 1e-10)
+  expect_equal(perf$ann_return, expected_return, tolerance = 1e-10)
 
   # Verify annualised vol: sd(0.01, 0.02, -0.01) * sqrt(252)
   expected_vol <- sd(c(0.01, 0.02, -0.01)) * sqrt(252)
-  expect_approximately_equal(perf$ann_vol, expected_vol, tolerance = 1e-10)
+  expect_equal(perf$ann_vol, expected_vol, tolerance = 1e-10)
 
   # Verify Sharpe: return / vol
   expected_sharpe <- expected_return / expected_vol
-  expect_approximately_equal(perf$sharpe, expected_sharpe, tolerance = 1e-10)
+  expect_equal(perf$sharpe, expected_sharpe, tolerance = 1e-10)
 })
 
 test_that("summarise_performance handles multiple tickers", {
