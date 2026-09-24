@@ -25,7 +25,7 @@ test_that("mod_tooltip with shinyhelper type works", {
     helper_type = "inline",
     helper_size = "m"
   )
-  expect_s3_class(tooltip, "shiny.tag")
+  expect_s3_class(tooltip, "shiny.tag.list")
 })
 
 test_that("mod_tooltip with prompter type works", {
@@ -37,7 +37,8 @@ test_that("mod_tooltip with prompter type works", {
   )
   expect_s3_class(tooltip, "shiny.tag")
   tooltip_str <- as.character(tooltip)
-  expect_match(tooltip_str, "prompt")
+  expect_match(tooltip_str, "hint--right")
+  expect_match(tooltip_str, "aria-label=\"Prompter tooltip\"")
 })
 
 test_that("mod_tooltip with shinyalert type works", {
@@ -80,7 +81,7 @@ test_that("mod_tooltip with invalid type argument errors", {
       type = "invalid",
       contents = "Test"
     ),
-    "invalid"
+    "should be one of"
   )
 })
 
