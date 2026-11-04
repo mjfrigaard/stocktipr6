@@ -1,29 +1,37 @@
 url: https://mjfrigaard.github.io/stocktipr6/
 
-navbar:
-  bg: primary       # paint the bar with primary (Bloomberg amber)
-  type: dark        # light text for contrast on dark background
-
 template:
   bootstrap: 5
+  light-switch: true
+  theme: a11y-light
+  theme-dark: a11y-dark
   bslib:
-    bg: "#0b0e13"          # Terminal background (near-black)
-    fg: "#d5dde5"          # Body text (light grey)
-    primary:   "#ff9e1b"   # Bloomberg amber       — buttons, headings, links
-    secondary: "#00d9ff"   # Cyan                  — hover, secondary accents
-    success:   "#2ecc71"   # Green                 — success, gains
-    info:      "#4ea1ff"   # Bright cyan           — info accents
-    warning:   "#ff9e1b"   # Bloomberg amber       — warning accent
-    danger:    "#ff4d4f"   # Red                   — danger, losses
-    body-bg:   "#0b0e13"   # Dark background
-    body-color: "#d5dde5"  # Light text
-    border-color: "#2a313b" # Dark borders
-    code-color: "#00d9ff"  # Cyan for inline code
-    code-bg:    "#12161d"  # Dark code background
+    # light mode
+    body-bg:    "#FBF7EE"   # paper (cream tint)
+    body-color: "#3E2A1E"   # chocolate brown
+    primary:    "#2A6F77"   # teal: links, buttons
+    secondary:  "#6B5A4C"   # muted brown
+    success:    "#4A7A49"   # avocado (darkened for text)
+    info:       "#2A6F77"   # teal
+    warning:    "#E8A33D"   # harvest gold
+    danger:     "#B83A4B"   # brick red
+    navbar-bg:  "#1B2A41"   # midnight navy (both modes)
+    code-color: "#8F3A18"   # burnt orange (darkened)
+    border-color: "#E4D8B8"
+    body-secondary-bg: "#F4ECD6"
+    body-tertiary-bg:  "#F7F1E2"
+    # dark mode
+    body-bg-dark:    "#141E2E"
+    body-color-dark: "#EDE3C8"
+    body-secondary-bg-dark: "#1B2A41"
+    body-tertiary-bg-dark:  "#1F2D44"
+    border-color-dark: "#2E3F5C"
+    link-color-dark:       "#7FBFC6"
+    link-hover-color-dark: "#E8A33D"
+    code-color-dark: "#F0B865"
     base_font:
-      google: Ubuntu
+      google: IBM Plex Sans
     heading_font:
-      google: Ubuntu
+      google: IBM Plex Sans Condensed
     code_font:
-      google: "Ubuntu Mono"
-
+      google: IBM Plex Mono

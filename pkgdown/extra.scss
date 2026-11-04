@@ -1,0 +1,72 @@
+// Shared light/dark theme for app-package sites (70s palette).
+// Colors come from _pkgdown.yml; this file adds what bslib variables can't.
+
+$gold:   #E8A33D;
+$orange: #D2562B;
+$brick:  #B83A4B;
+
+:root,
+[data-bs-theme="light"] {
+  --app-code-bg: #F4ECD6;
+  --app-stripe-gap: #1B2A41;
+}
+
+[data-bs-theme="dark"] {
+  --app-code-bg: #1F2D44;
+  --bs-primary: #7FBFC6;
+  --bs-primary-rgb: 127, 191, 198;
+}
+
+// Navy navbar (navbar-bg in _pkgdown.yml) with cream text and a
+// three band stripe underneath
+.navbar {
+  --bs-navbar-color: rgba(242, 230, 194, 0.85);
+  --bs-navbar-hover-color: #{$gold};
+  --bs-navbar-active-color: #F2E6C2;
+  --bs-navbar-brand-color: #F2E6C2;
+  --bs-navbar-brand-hover-color: #{$gold};
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 230, 194, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(242, 230, 194, 0.3);
+  color: #F2E6C2;
+  border-bottom: 0;
+  box-shadow:
+    0 3px 0 $gold,
+    0 6px 0 $orange,
+    0 9px 0 $brick;
+  margin-bottom: 9px;
+}
+
+.navbar .nav-text,
+.navbar .text-muted {
+  color: #{$gold} !important;
+}
+
+.navbar .nav-item .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+  background: rgba(242, 230, 194, 0.1);
+}
+
+// Inline code and code blocks
+:not(pre) > code {
+  background-color: var(--app-code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: var(--app-code-bg) !important;
+  border: 1px solid var(--bs-border-color);
+}
+
+pre code {
+  background-color: transparent !important;
+  padding: 0;
+}
+
+a:hover {
+  text-decoration-color: $gold;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0.01em;
+}
