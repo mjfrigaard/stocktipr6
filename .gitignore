@@ -4,14 +4,7 @@
 .Ruserdata
 inst/doc
 .claudignore
-.claude/
-.codegraph/
-.posit/
-.positai/
-CLAUDE.md
-AGENTS.md
 .DS_Store
-.claudeignore
 docs
 
 /.quarto/
